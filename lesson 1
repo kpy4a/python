@@ -1,0 +1,47 @@
+'''
+Задание 1
+Пользователя просят ввести время в секундах
+Далее выводится результат преобразования времени в секундах в формат чч:мм:сс
+'''
+posix_time_stamp = int(input('Введите время в секундах:\n'))
+
+print(f'{posix_time_stamp // 3600:02} : {posix_time_stamp % 3600 // 60:02} : {posix_time_stamp % 3600 % 60:02}')
+
+'''
+Задание 2
+'''
+a = [i**3 for i in range(0,1000) if i%2 != 0] #список кубов нечетных чисел от 0 до 1к
+
+summ = 0
+summ2 = 0
+tot = 0
+tot2 = 0
+
+for i in range(len(a)): #изначалное вычисление суммы кубов
+    for digit in a:
+        summ += int(digit)
+        if summ%3==0:
+            tot+=summ
+print("Сумма:", summ)
+
+for i in range(len(a)): #вычисление суммы кубов +17
+    a[i]+=17
+    
+for i in range(len(a)):
+    for digit in a:
+            summ2 += int(digit)
+            if summ2%3==0:
+                tot2+=summ2
+print("Сумма (+17):", summ2)
+
+'''
+задание 3
+'''
+
+l = int(input('Incert the number from 0 to 20: '))
+if l == 1:
+    print(l," процент")
+if l == 2 or l == 3 or l == 4:
+    print(l," процента")
+if l >= 5:
+    print(l," процентов")
